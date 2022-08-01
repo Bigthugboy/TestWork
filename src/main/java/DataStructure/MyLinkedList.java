@@ -6,6 +6,7 @@ public class MyLinkedList {
     private Node tail;
     private  Node next;
     private int counter;
+    private int size;
 
 
 
@@ -41,27 +42,40 @@ public class MyLinkedList {
     }
 
 
-    public void remove(int index) {
-        if(index == 0){
-            head = head.next;
-    }
-        else {
-            for (int i = 0; i < index-1 ; i++) {
-                tail = tail.next;
-            }
+    public void removeFirst() {
+        head = head.next;
+        if(head == null){
+            tail = null;
+            counter--;
         }
+
     }
 
-    public Object get(Object data) {
-
-        return data;
-    }
     public void display(){
         Node temp = head;
         while (temp != null){
-            System.out.println(temp.data);
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
+    }
+    public Node get(int index){
+        Node node = head;
+        for (int i = 0; i < index ; i++) {
+            node = node.next;
+
+        }
+
+        return node;
+    }
+    public void deleteLast(){
+        if(size() <= 1){
+            deleteLast();
+        }
+        Node last = get(counter - 2);
+        Object data = tail.data;
+        tail = last;
+        tail.next =  null;
+
     }
 }
 

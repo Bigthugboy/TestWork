@@ -41,15 +41,15 @@ class MyLinkedListTest {
         linkedList.add("england");
         linkedList.add("italy");
         linkedList.add("togo");
-        linkedList.remove(1 );
-        assertEquals(3,linkedList.size());
+        linkedList.removeFirst();
+        assertEquals(2,linkedList.size());
     }
     @Test
     public void linkedListCanGet(){
         linkedList.add("england");
         linkedList.add("italy");
         linkedList.add("togo");
-        linkedList.get("italy");
-        assertEquals("italy",linkedList.get("togo"));
+       // linkedList.get(2);
+        assertEquals("togo",linkedList.get(2));
     }
 }

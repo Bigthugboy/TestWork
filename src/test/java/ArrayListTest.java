@@ -14,7 +14,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void ArrayListTest() {
+    public void arrayListTest() {
         ArrayListTest array = new ArrayListTest();
         assertNotNull(array);
     }
